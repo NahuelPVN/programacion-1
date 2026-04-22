@@ -18,7 +18,7 @@ alert("El menor es " + menor);
 let dato = 0;
 let sumaAbs = 0;
 for (let i = 0; i < 3; i++) {
-    dato = prompt("Ingrese valor");
+    dato = parseInt(prompt("Ingrese valor"));
     if (dato >= 0) {
         sumaAbs += dato;
     } else {
@@ -28,7 +28,7 @@ for (let i = 0; i < 3; i++) {
 alert("La suma de sus valores absolutos es " + sumaAbs);
 
 // 4) Pedir el ingreso de un número n. Mostrar la suma de todos los impares que sean múltiplos de 3 entre 1 y n. Ej. si se ingresa 16, se muestra 27.
-let n = prompt("Ingrese n");
+let n = parseInt(prompt("Ingrese n"));
 let sumaImpares = 0;
 for (let i = 1; i <= n; i++) {
     if ( (i % 3 == 0) && (i % 2 != 0)) {
@@ -55,10 +55,8 @@ for (let i = 0; i < 9; i++) {
     temp = Number(prompt("Ingrese número"));
     if (temp < menorNum) {
         menorNum = temp;
-        continue;
     } else if (temp > mayorNum) {
         mayorNum = temp;
-        continue;
     }
 }
 alert("El mayor fue " + mayorNum + ", el menor fue " + menorNum);
@@ -96,12 +94,27 @@ for (let i = 0; i < 3; i++) {
     resultado *= inputProducto;
 }
 
-if (resultado >= 0) {
+if (resultado > 0) {
     alert("El signo es positivo");
-} else {
+} else if (resultado < 0) {
     alert("El signo es negativo");
+} else {
+    alert("El resultado es 0 (neutro)");
 }
 
 // 10) Escribir un programa reciba un número de 3 dígitos e indique si es un número de Armstrong. Nota: un número de Armstrong es aquel en el cual la suma de cada uno de sus dìgitos elevado al número total de dìgitos es igual al a sí mismo. Ej: Si evaluamos 371 sería 33 + 73 +13 = 371
 
-     
+let numeroArmstrong = Number((prompt("Ingrese número")));
+let digitosArmstrong = (numeroArmstrong.toString()).split('');
+let sumaArmstrong = 0;
+let largoArmstrong = digitosArmstrong.length;
+
+for (let n of digitosArmstrong) {
+    sumaArmstrong += (Number(n) ** (largoArmstrong));
+}
+alert("El resultado es " + sumaArmstrong);
+if (numeroArmstrong == sumaArmstrong) {
+    alert(numeroArmstrong + " es un número de Armstrong");
+} else {
+    alert(numeroArmstrong + " NO es un número de Armstrong");
+}
