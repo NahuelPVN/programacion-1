@@ -1,5 +1,4 @@
 /*
-
 1) (Nivel básico, 7 puntos)
 Se tiene información de los recorridos de los monopatines eléctricos. Hasta que el usuario lo
 indique, se ingresará número de monopatín (se asume positivo). Debe verificarse que cada
@@ -14,23 +13,20 @@ let numeroMonopatin = 0;
 let usosMonopatin = 0;
 let kmMonopatin = 0;
 let kmTotal = 0;
-let continuar = true;
 
-while (continuar) {
-    while(true) {
-        inputNumeroMonopatin = Number(prompt("Ingrese número de monopatín (-1 = finalizar)"));
-        if (inputNumeroMonopatin == -1) {
-            continuar = false;
-            break;
+while (true) {
+    while (true) {
+        inputNumeroMonopatin = Number(
+            prompt("Ingrese número de monopatín (-1 = finalizar)"));
+        if (inputNumeroMonopatin === -1) {
+            alert( "El total de kilómetros en monopatines con más de 20 usos es " + kmTotal);
+            return;
         }
         if (inputNumeroMonopatin > numeroMonopatin) {
+            numeroMonopatin = inputNumeroMonopatin;
             break;
-        } else {
-            alert("Ingresa un número de monopatín mayor al anterior");
         }
-    }
-    if (!continuar) {
-        break;
+        alert("El número debe ser mayor al anterior");
     }
     usosMonopatin = Number(prompt("Ingrese número de usos"));
     kmMonopatin = Number(prompt("Ingrese kilómetros del monopatín"));
@@ -38,8 +34,6 @@ while (continuar) {
         kmTotal += kmMonopatin;
     }
 }
-
-alert(`El total de kilómetros en monopatines con más de 20 usos es ` + kmTotal);
 
 /*
 2) (Nivel medio, 5 puntos)
