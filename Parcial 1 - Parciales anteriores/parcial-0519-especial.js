@@ -24,7 +24,6 @@ while (continuar) {
             break;
         }
         if (inputNumeroMonopatin > numeroMonopatin) {
-            numeroMonopatin = inputNumeroMonopatin;
             break;
         } else {
             alert("Ingresa un número de monopatín mayor al anterior");
@@ -42,7 +41,6 @@ while (continuar) {
 
 alert(`El total de kilómetros en monopatines con más de 20 usos es ` + kmTotal);
 
-
 /*
 2) (Nivel medio, 5 puntos)
 Leer un string y genere uno nuevo donde cada letra esté repetida según su posición.
@@ -50,6 +48,17 @@ Ejemplo:
 Lee: “hola”, genera: hoolllaaaa
 Lee: “parcial”, genera: paarrrcccciiiiiaaaaaalllllll
 Hacer un programa en JS que solicite el string, genere un nuevo string y lo muestre.
+*/
+let stringInput = prompt("Ingrese el string");
+let nuevoString = ''
+for (let i = 0; i < stringInput.length; i++) {
+    for (let x = 0; x < i + 1; x++) {
+        nuevoString += stringInput[i];
+    }
+}
+alert(nuevoString);
+
+/*
 3) (Nivel avanzado, 3 puntos)
 Dos contraseñas tienen el mismo patrón cuando la diferencia entre cada uno de sus dígitos
 posición a posición es la misma. Se asumen del mismo largo.
@@ -60,5 +69,21 @@ Implementar en JS la función verificar que recibe dos contraseñas y retorna el
 correspondiente. Anotar la invocación para probar en la consola con las contraseñas 2402 y
 5523.
 function patron (clave1, clave2)
-
 */
+function patron(clave1, clave2) {
+    let mismoPatron = true;
+    let clave1String = clave1.toString();
+    let clave2String = clave2.toString();
+
+    for (let i = 0; i < clave1String.length - 1; i++) {
+        let diferenciaActual =
+            parseInt(clave1String[i]) - parseInt(clave2String[i]);
+        let diferenciaSiguiente =
+            parseInt(clave1String[i + 1]) - parseInt(clave2String[i + 1]);
+        if (diferenciaActual !== diferenciaSiguiente) {
+            mismoPatron = false;
+        }
+    }
+    return mismoPatron;
+}
+console.log(patron(2402, 5523));
