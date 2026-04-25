@@ -29,7 +29,9 @@ while (true) {
     }
 }
 
-if (countPublico || countPrivado) {
+if (countPublico == 0 && countPrivado == 0) {
+    alert("No hubo datos");
+} else {
     if (numeroPublico > numeroPrivado) {
         alert("Los eventos públicos tuvieron más participantes");
     } else if (numeroPublico < numeroPrivado) {
@@ -37,9 +39,12 @@ if (countPublico || countPrivado) {
     } else {
         alert("Los eventos públicos y privados tuvieron la misma cantidad total de participantes");
     }
+    if (countPrivado > 0) {
+        alert(`El promedio de asistencia en los eventos privados fue de ${numeroPrivado / countPrivado}`);
+    } else {
+        alert("No hubo eventos privados");
+    }
 }
-
-alert(`El promedio de asistencia en los eventos privados fue de ${numeroPrivado / countPrivado}`);
 
 /*
 2) (Nivel medio, 5 puntos)
@@ -82,10 +87,14 @@ function sinCeros (dato1, dato2)
 */
 
 function sinCeros(dato1, dato2) {
-    let conCeros = dato1 + dato2;
-    console.log(conCeros); 
-    conCeros.split(',');
-    console.log(conCeros);
+    let suma = dato1 + dato2;
+    let texto = suma.toString();
+    let resultado = "";
+    for (let i = 0; i < texto.length; i++) {
+        if (texto[i] != "0") {
+            resultado += texto[i];
+        }
+    }
+    return Number(resultado);
 }
-
-sinCeros(14,6);
+console.log(sinCeros(12800, 42));
