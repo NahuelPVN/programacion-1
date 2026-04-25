@@ -19,8 +19,8 @@ while (true) {
         inputNumeroMonopatin = Number(
             prompt("Ingrese número de monopatín (-1 = finalizar)"));
         if (inputNumeroMonopatin === -1) {
-            alert( "El total de kilómetros en monopatines con más de 20 usos es " + kmTotal);
-            return;
+            alert("El total de kilómetros en monopatines con más de 20 usos es " + kmTotal);
+            break;
         }
         if (inputNumeroMonopatin > numeroMonopatin) {
             numeroMonopatin = inputNumeroMonopatin;
@@ -28,13 +28,15 @@ while (true) {
         }
         alert("El número debe ser mayor al anterior");
     }
+    if (inputNumeroMonopatin === -1) {
+        break;
+    }
     usosMonopatin = Number(prompt("Ingrese número de usos"));
     kmMonopatin = Number(prompt("Ingrese kilómetros del monopatín"));
     if (usosMonopatin > 20) {
         kmTotal += kmMonopatin;
     }
 }
-
 /*
 2) (Nivel medio, 5 puntos)
 Leer un string y genere uno nuevo donde cada letra esté repetida según su posición.
