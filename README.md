@@ -1,8 +1,13 @@
-# Programación 1 – ORT Uruguay
+# Programación 1 - ORT Uruguay
 
-Ejercicios y práctica personal de la materia Programación 1.
+Repositorio con ejercicios realizados durante el curso de Programación 1.
 
-Contenido:
-- prácticos
-- parciales anteriores
-- ejercicios de funciones, strings, loops y lógica básica
+Incluye:
+
+- prácticos obligatorios
+- parciales anteriores resueltos
+- ejercicios de práctica adicional
+
+Lenguaje utilizado: JavaScript
+
+El objetivo del repositorio es registrar el progreso en la materia y practicar resolución de problemas algorítmicos.
