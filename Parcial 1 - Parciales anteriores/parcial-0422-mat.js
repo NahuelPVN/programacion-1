@@ -61,7 +61,6 @@ for (let i = 1; i <= m; i++) {
     console.log(pentagonal(i));
 }
 
-
 /*
 EJ 3 – PUNTAJE 4
 Ana tiene muchos banderines, cada uno con una letra en mayúscula. Quiere saber cuántas veces podrá
