@@ -16,31 +16,28 @@ let tribunaDisponibles = parseInt(prompt('Ingrese la cantidad de entradas dispon
 let cantidadComprar = 0;
 let tipoComprar = 0;
 let maximoPlatea = 0;
-while (plateaDisponibles > 0 || tribunaDisponibles > 0) {
+
+while (true) {
     cantidadComprar = parseInt(prompt('Ingrese la cantidad de entradas a comprar'));
-    if (cantidadComprar == 0) {
-        break
-    }
+    if (cantidadComprar == 0) break;
     tipoComprar = prompt('Ingrese el tipo de entradas a comprar (P / T)');
     if (tipoComprar == 'P' && cantidadComprar > plateaDisponibles || 
         tipoComprar == 'T' && cantidadComprar > tribunaDisponibles) {
-            alert('No quedan suficientes entradas de ese tipo');
-        } else {
-            if (tipoComprar == 'P') {
-                plateaDisponibles -= cantidadComprar;
-                if (cantidadComprar > maximoPlatea) {
-                    maximoPlatea = cantidadComprar;
-                }
-            } else if (tipoComprar == 'T') {
-                tribunaDisponibles -= cantidadComprar;
-            }
-            alert('Venta realizada');
+        alert('No quedan suficientes entradas de ese tipo');
+    } else {
+        if (tipoComprar == 'P') {
+            plateaDisponibles -= cantidadComprar;
+            if (cantidadComprar > maximoPlatea) maximoPlatea = cantidadComprar;
+        } else if (tipoComprar == 'T') {
+            tribunaDisponibles -= cantidadComprar;
         }
+        alert('Venta realizada');
+    }
 }
+
 alert('Disponibles en platea: ' + plateaDisponibles);
 alert('Disponibles en tribuna: ' + tribunaDisponibles);
-alert('Máximo entradas de platea en una venta: ' + maximoPlatea);
-
+alert('Máximo entradas de platea en una venta: ' + maximoPlatea);   
 /*
 EJ 2 – PUNTAJE 4
 Se desea implementar una función que recibe un string que contiene dígitos y los signos de "+" y "-" y
